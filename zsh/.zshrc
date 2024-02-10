@@ -6,9 +6,6 @@ plugins=(
   zsh-syntax-highlighting
 )
 
-source ${ZSH}/oh-my-zsh.sh
-source ${NVM_DIR}/nvm.sh
-
 prompt_end() {
   if [[ -n $CURRENT_BG ]]; then
       print -n "%{%k%F{$CURRENT_BG}%}$SEGMENT_SEPARATOR"
@@ -22,5 +19,8 @@ prompt_end() {
   # Adds the new line and ➜ as the start character.
   printf "\n ➜";
 }
+
+source ~/.nvm/nvm.sh
+source ~/.oh-my-zsh/oh-my-zsh.sh
 
 alias ngc="ng generate @schematics/angular:component"
